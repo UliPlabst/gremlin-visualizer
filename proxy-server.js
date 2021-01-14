@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const Gremlin = require('gremlin');
@@ -16,7 +17,10 @@ const config = {
 }
 
 if(config.endpoint == null || config.primaryKey == null)
-  throw new Error("Environment variables GREMLIN_ENDPOINT and COSMOS_ACCESS_KEY must be present!")
+{
+  console.error("Environment variables GREMLIN_ENDPOINT and COSMOS_ACCESS_KEY must be present!")
+  process.exit(1);
+}
 
 app.use(cors({
     credentials: true,
