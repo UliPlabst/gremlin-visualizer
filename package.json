@@ -26,6 +26,7 @@
   "scripts": {
     "client": "react-scripts start",
     "server": "node proxy-server.js",
+    "prestart": "../init_env.ps1",
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

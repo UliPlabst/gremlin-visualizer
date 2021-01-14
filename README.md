@@ -1,5 +1,6 @@
-# Gremlin-Visualizer
-This project is to visualize the graph network corresponding to a gremlin query.
+# Gremlin-Visualizer for Azure COSMOS DB
+This project is to visualize the graph network corresponding to a gremlin query connecting to Azure COSMOS DB.
+I integrated modifications from [https://github.com/prabushitha/gremlin-visualizer/issues/10](https://github.com/prabushitha/gremlin-visualizer/issues/10). 
 
 ![alt text](https://raw.githubusercontent.com/prabushitha/Readme-Materials/master/Gremlin-Visualizer.png)
 
