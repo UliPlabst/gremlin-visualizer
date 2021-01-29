@@ -31,7 +31,8 @@ export const extractEdgesAndNodes = (nodeList, nodeLabels=[]) => {
     const labelField = nodeLabelMap[type];
     //const label = labelField in node.properties ? node.properties[labelField] : type;
     //fix typ und name verwenden. ggfs noch anpassen
-    const label = "Name" in node.properties ? type + ": " + node.properties["Name"] : type;
+    const name = node.properties["DisplayName"] || node.properties["Name"] || node.properties["Id"];
+    const label = name != null ? `${name}: ${type}` : type;
     nodes.push({ id: node.id, label: String(label), group: node.label, properties: node.properties, type });
 
     edges = edges.concat(_.map(node.edges, edge => ({ ...edge, type: edge.label, arrows: { to: { enabled: true, scaleFactor: 0.5 } } })));
